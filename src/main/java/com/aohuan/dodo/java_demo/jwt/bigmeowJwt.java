@@ -7,7 +7,7 @@ import java.util.Map;
 import com.auth0.jwt.JWT;
 
 
-public class bigmeowJwt {
+public class BigmeowJwt {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

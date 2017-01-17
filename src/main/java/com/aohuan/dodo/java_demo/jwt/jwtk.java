@@ -6,11 +6,11 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.impl.crypto.MacProvider;
 
-public class jwtk {
+public class Jwtk {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		jwtk jw = new jwtk();
+		Jwtk jw = new Jwtk();
 		jw.do01Build();
 	}
 

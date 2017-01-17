@@ -12,11 +12,11 @@ import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 
-public class auth0 {
+public class Auth0 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		auth0 au = new auth0();
+		Auth0 au = new Auth0();
 		// au.do01DecodeToken();
 //		au.do02CreatAndSignToken();
 //		au.do022CreatAndSignToken();	//XXXX
