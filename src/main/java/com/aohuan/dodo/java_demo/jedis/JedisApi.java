@@ -56,27 +56,6 @@ public class JedisApi {
 		return value;
 	}
 	
-//	/**
-//	 * set 
-//	 * @param key
-//	 * @param value
-//	 * @return
-//	 */
-//	@SuppressWarnings("deprecation")
-//	public byte[] set(String key,byte[] value){
-//		Jedis jedis = jedisPool.getResource();
-//		try{
-//			jedis.set(key,value);
-//			jedis.set`
-//			if(this.expire != 0){
-//				jedis.expire(key, this.expire);
-//		 	}
-//		}finally{
-//			jedisPool.returnResource(jedis);
-//		}
-//		return value;
-//	}
-	
 	/**
 	 * set 
 	 * @param key
