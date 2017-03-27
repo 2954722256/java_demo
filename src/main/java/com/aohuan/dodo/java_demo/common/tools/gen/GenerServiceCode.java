@@ -12,18 +12,27 @@ public class GenerServiceCode {
 
 	public static ArrayList<ServiceCodeBean> beanList = new ArrayList<>();
 	
-	public static String[] strArr = {"zk_ad", "zk_ad_cate", "zk_angel_user", "zk_demand", "zk_demand_bidding", "zk_demand_collect", "zk_demand_comment", "zk_demand_dismantle", "zk_demand_praise", "zk_goods", "zk_goods_grade", "zk_goodstype", "zk_hatch_project", "zk_merchant", "zk_order_form", "zk_orderform_invoice", "zk_post", "zk_post_comment", "zk_post_praise", "zk_post_type", "zk_project_diagnose", "zk_project_roadshow", "zk_roadshow_grade", "zk_roadshow_record", "zk_shop", "zk_short_message", "zk_short_video", "zk_short_video_collect", "zk_short_video_praise", "zk_sku", "zk_use_integral", "zk_user", "zk_user_focus", "zk_video_collect", "zk_video_comment", "zk_video_like"};
+//	public static String[] strArr = {"zk_ad", "zk_ad_cate", "zk_angel_user", "zk_demand", "zk_demand_bidding", "zk_demand_collect", "zk_demand_comment", "zk_demand_dismantle", "zk_demand_praise", "zk_goods", "zk_goods_grade", "zk_goodstype", "zk_hatch_project", "zk_merchant", "zk_order_form", "zk_orderform_invoice", "zk_post", "zk_post_comment", "zk_post_praise", "zk_post_type", "zk_project_diagnose", "zk_project_roadshow", "zk_roadshow_grade", "zk_roadshow_record", "zk_shop", "zk_short_message", "zk_short_video", "zk_short_video_collect", "zk_short_video_praise", "zk_sku", "zk_use_integral", "zk_user", "zk_user_focus", "zk_video_collect", "zk_video_comment", "zk_video_like"};
+	
+	public static String[] strArr = {};
 	
 	
 
 	public void action() {
-		before();
+		if(!before())
+			return;
 		run();
 		after();
 	}
 
-	private void before() {
-		
+	private boolean before() {
+		ArrayList<String> strList = MysqlTableReader.getTables();
+		if(strList == null){
+			System.out.println("mysql null");
+			return false;
+		}
+		strArr = (String[])strList.toArray(new String[strList.size()]);
+				
 		for (String string : strArr) {
 			String[] split2 = string.split("_");
 			String lei = "";
@@ -39,6 +48,7 @@ public class GenerServiceCode {
 			beanList.add(scb);
 //			System.out.println(lei);
 		}
+		return true;
 	}
 
 	private void run() {
